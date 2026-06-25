@@ -14,11 +14,17 @@
   · 종목 메타데이터(회사명, 거래소, ETF여부 등) 포함
 
 ### 데이터 모델
-두 개의 테이블로 구성된 관계형 구조
-테이블 1 - stock_prices : 종목별 일별 시세(가격, 거래량)
-테이블 2 - companies : 종목 메타데이터(회사명, 거래소, ETF 여부)
-  · stock_prices.ticker -> companies.symbol (외래키, 1:N관계)
-<img width="417" height="694" alt="스크린샷 2026-06-25 오후 2 36 00" src="https://github.com/user-attachments/assets/2638245b-080b-4c21-81fd-3ac1734f9ccd" />
+두 개의 테이블로 구성된 관계형 구조입니다.
+
+| 테이블 | 설명 |
+|--------|------|
+| `stock_prices` | 종목별 일별 시세 (가격, 거래량) |
+| `companies` | 종목 메타데이터 (회사명, 거래소, ETF 여부) |
+
+- `stock_prices.ticker` → `companies.symbol` (외래키, 1:N 관계)
+
+<img width="417" height="694" alt="ERD" src="https://github.com/user-attachments/assets/2638245b-080b-4c21-81fd-3ac1734f9ccd" />
+
 
 ### 주요 분석(예정)
 · 이동평균선(MA20/MA60/MA120) - 윈도우 함수
